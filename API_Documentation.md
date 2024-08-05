@@ -43,14 +43,12 @@ The base URL for all endpoints is `http://localhost:8000/`.
     "total_pages": 2
 }
 
-### 1. Fetch Book Data
-
+2. Submit Book Recommendation
 Endpoint:
 POST /recommendations/submit/
 
 Request Body:
 
-json
 {
     "title": "Example Book Title",
     "author": "Author Name",
@@ -63,13 +61,12 @@ json
 Response:
 Returns the details of the submitted recommendation.
 
-### 3. User Registration
+3. User Registration
 Endpoint:
 POST /register/
 
 Request Body:
 
-json
 {
     "username": "testuser",
     "email": "testuser@example.com",
@@ -78,32 +75,27 @@ json
 }
 Response:
 
-json
 {
     "username": "testuser",
     "email": "testuser@example.com"
 }
-
-### 4. User Login
-
+4. User Login
 Endpoint:
 POST /login/
 
 Request Body:
-json
+
 {
     "username": "testuser",
     "password": "testpassword"
 }
 Response:
 
-json
 {
     "refresh": "refresh_token_here",
     "access": "access_token_here"
 }
-
-### 5. Filter Recommendations by Genre
+5. Filter Recommendations by Genre
 Endpoint:
 GET /recommendations/
 
@@ -111,8 +103,6 @@ Query Parameters:
 
 genre: The genre to filter by (e.g., Thriller).
 Response:
-
-json
 {
     "title": "Example Book Title",
     "author": "Author Name",
@@ -123,7 +113,7 @@ json
     "rating": 4.5
 }
 
-### 6. Sort Recommendations by Publication Date (Descending)
+6. Sort Recommendations by Publication Date (Descending)
 Endpoint:
 GET /recommendations/
 
@@ -134,13 +124,12 @@ sort_by: The field to sort by (e.g., publication_date).
 Response:
 Returns the sorted list of book recommendations.
 
-### 7. Upload Books
+7. Upload Books
 Endpoint:
 POST /books/upload/
 
 Request Body:
 
-json
 {
     "title": "Sample Book",
     "author": "John Doe",
@@ -152,54 +141,40 @@ json
 Response:
 Returns the details of the uploaded book.
 
-### 8. Comment on Books
-
+8. Comment on Books
 Endpoint:
 POST /comments/
 
 Request Body:
-
-json
 {
     "book": 96,
     "text": "This is a sample comment."
 }
 Response:
-
-json
 {
     "book": 96,
     "text": "This is a sample comment.",
     "created_at": "2024-08-05T02:29:52.148774Z"
 }
-
-### 9. Like a Book
-
+9. Like a Book
 Endpoint:
 POST /likes/
 
 Request Body:
 
-json
 {
     "book": 95
 }
 Response:
-
-json
 {
     "book": 95,
     "created_at": "2024-08-05T02:30:23.089843Z"
 }
-
-### 10. Review a Book
-
+10. Review a Book
 Endpoint:
 POST /reviews/
 
 Request Body:
-
-json
 {
     "book": 95,
     "text": "Great book, highly recommend!",
@@ -207,7 +182,6 @@ json
 }
 Response:
 
-json
 {
     "id": 4,
     "book": 95,
@@ -215,14 +189,12 @@ json
     "rating": 5,
     "user": "testuser"
 }
-
-### 11. List Reviews of a Book
+11. List Reviews of a Book
 Endpoint:
 GET /reviews/{book_id}/
 
 Response:
 
-json
 {
     "id": 1,
     "book": 95,
@@ -230,14 +202,10 @@ json
     "rating": 5
 }
 
-Notes::
-
+Notes
 All endpoints require proper authentication unless specified otherwise.
 For protected endpoints, use the Authorization: Bearer {token} header.
 Response formats and status codes follow RESTful standards.
 Always check the status code and response body for error messages and additional details.
 
-Conclusion:: 
-
-This documentation provides a comprehensive overview of the available APIs, making it easier for developers to understand and integrate the Book Management System into their applications. For further customization and enhancement, developers can refer to the underlying Django views, serializers, and models as required.
-
+This documentation provides a comprehensive overview of the available APIs, making it easier for developers to understand and integrate the Book Management System into their applications. For further customization and enhancement, developers can refer to the underlying Django views, serializers, and models as required
