@@ -20,7 +20,7 @@ The base URL for all endpoints is `http://localhost:8000/`.
 
 **Response:**
 ```json
-`{
+{
     "saved_books": [
         {
             "id": 98,
@@ -41,7 +41,7 @@ The base URL for all endpoints is `http://localhost:8000/`.
     ],
     "page": 1,
     "total_pages": 2
-}`
+}
 
 ### 1. Fetch Book Data
 
