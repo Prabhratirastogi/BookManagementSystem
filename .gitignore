@@ -1,0 +1,19 @@
+# Django migrations
+*/migrations/
+
+# Media files
+media/
+
+# .env file
+.env
+
+# Database
+*.sqlite3
+
+# Ignore virtual environments
+myenv/
+
+# IDE specific files
+.vscode/
+.idea/
+
