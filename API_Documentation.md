@@ -227,10 +227,3 @@ Copy code
     "text": "Great book, highly recommend!",
     "rating": 5
 }
-Notes
-All endpoints require proper authentication unless specified otherwise.
-For protected endpoints, use the Authorization: Bearer {token} header.
-Response formats and status codes follow RESTful standards.
-Always check the status code and response body for error messages and additional details.
-This documentation provides a comprehensive overview of the available APIs, making it easier for developers to understand and integrate the Book Management System into their applications. For further customization and enhancement, developers can refer to the underlying Django views, serializers, and models as required.
-
