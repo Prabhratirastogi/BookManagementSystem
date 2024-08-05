@@ -1,24 +1,7 @@
-# API Documentation for Book Management System
-
-This documentation provides detailed information about the API endpoints of the Book Management System. The system includes functionalities such as fetching book data, user registration, authentication, managing book recommendations, and interacting with books through comments, likes, and reviews.
-
-## Base URL
-
-The base URL for all endpoints is `http://localhost:8000/`.
-
-## Endpoints
-
-### 1. Fetch Book Data
-
-**Endpoint:**  
-`GET /fetch-books/`
-
-**Query Parameters:**  
-- `query`: The search query (e.g., 0.0 for ratings).  
-- `search_type`: The type of search (e.g., rating).  
-- `max_results`: The maximum number of results to return (e.g., 1).  
+### 1. Saved Books
 
 **Response:**
+
 ```json
 {
     "saved_books": [
@@ -44,13 +27,14 @@ The base URL for all endpoints is `http://localhost:8000/`.
 }
 
 2. Submit Book Recommendation
+Endpoint:
 
-**Endpoint:**
-`POST /recommendations/submit/`
+POST /recommendations/submit/
 
-**Request Body:**
+Request Body:
 
-```json
+json
+Copy code
 {
     "title": "Example Book Title",
     "author": "Author Name",
@@ -60,13 +44,19 @@ The base URL for all endpoints is `http://localhost:8000/`.
     "publication_date": "2022-01-01",
     "cover_image": "https://example.com/cover_image.jpg"
 }
+Response:
+
+Returns the details of the submitted recommendation.
 
 3. User Registration
 Endpoint:
+
 POST /register/
 
 Request Body:
 
+json
+Copy code
 {
     "username": "testuser",
     "email": "testuser@example.com",
@@ -75,34 +65,45 @@ Request Body:
 }
 Response:
 
+json
+Copy code
 {
     "username": "testuser",
     "email": "testuser@example.com"
 }
 4. User Login
 Endpoint:
+
 POST /login/
 
 Request Body:
 
+json
+Copy code
 {
     "username": "testuser",
     "password": "testpassword"
 }
 Response:
 
+json
+Copy code
 {
     "refresh": "refresh_token_here",
     "access": "access_token_here"
 }
 5. Filter Recommendations by Genre
 Endpoint:
+
 GET /recommendations/
 
 Query Parameters:
 
 genre: The genre to filter by (e.g., Thriller).
 Response:
+
+json
+Copy code
 {
     "title": "Example Book Title",
     "author": "Author Name",
@@ -112,9 +113,9 @@ Response:
     "cover_image": "https://example.com/cover_image.jpg",
     "rating": 4.5
 }
-
 6. Sort Recommendations by Publication Date (Descending)
 Endpoint:
+
 GET /recommendations/
 
 Query Parameters:
@@ -122,14 +123,18 @@ Query Parameters:
 genre: The genre to filter by (e.g., Fiction).
 sort_by: The field to sort by (e.g., publication_date).
 Response:
+
 Returns the sorted list of book recommendations.
 
 7. Upload Books
 Endpoint:
+
 POST /books/upload/
 
 Request Body:
 
+json
+Copy code
 {
     "title": "Sample Book",
     "author": "John Doe",
@@ -139,18 +144,26 @@ Request Body:
     "pdf_file": "http://127.0.0.1:8000/media/books/pdfs/sample.pdf"
 }
 Response:
+
 Returns the details of the uploaded book.
 
 8. Comment on Books
 Endpoint:
+
 POST /comments/
 
 Request Body:
+
+json
+Copy code
 {
     "book": 96,
     "text": "This is a sample comment."
 }
 Response:
+
+json
+Copy code
 {
     "book": 96,
     "text": "This is a sample comment.",
@@ -158,23 +171,33 @@ Response:
 }
 9. Like a Book
 Endpoint:
+
 POST /likes/
 
 Request Body:
 
+json
+Copy code
 {
     "book": 95
 }
 Response:
+
+json
+Copy code
 {
     "book": 95,
     "created_at": "2024-08-05T02:30:23.089843Z"
 }
 10. Review a Book
 Endpoint:
+
 POST /reviews/
 
 Request Body:
+
+json
+Copy code
 {
     "book": 95,
     "text": "Great book, highly recommend!",
@@ -182,6 +205,8 @@ Request Body:
 }
 Response:
 
+json
+Copy code
 {
     "id": 4,
     "book": 95,
@@ -191,21 +216,23 @@ Response:
 }
 11. List Reviews of a Book
 Endpoint:
+
 GET /reviews/{book_id}/
 
 Response:
 
+json
+Copy code
 {
     "id": 1,
     "book": 95,
     "text": "Great book, highly recommend!",
     "rating": 5
 }
-
 Notes
 All endpoints require proper authentication unless specified otherwise.
 For protected endpoints, use the Authorization: Bearer {token} header.
 Response formats and status codes follow RESTful standards.
 Always check the status code and response body for error messages and additional details.
+This documentation provides a comprehensive overview of the available APIs, making it easier for developers to understand and integrate the Book Management System into their applications. For further customization and enhancement, developers can refer to the underlying Django views, serializers, and models as required.
 
-This documentation provides a comprehensive overview of the available APIs, making it easier for developers to understand and integrate the Book Management System into their applications. For further customization and enhancement, developers can refer to the underlying Django views, serializers, and models as required
