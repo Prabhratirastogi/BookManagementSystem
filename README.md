@@ -40,14 +40,14 @@ This project is a Book Management System built using Django, a powerful web fram
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/book-management-system.git
+    https://github.com/Prabhratirastogi/BookManagementSystem
     cd book-management-system
     ```
 
 2. **Create and Activate a Virtual Environment**:
     ```bash
-    python -m venv env
-    source env/bin/activate  # On Windows, use `env\Scripts\activate`
+    python -m venv myenv
+    source myenv/bin/activate  # On Windows, use `env\Scripts\activate`
     ```
 
 3. **Install Dependencies**:
@@ -100,15 +100,15 @@ Contributions are welcome! Please follow these steps to contribute:
 1. **Fork the Repository**.
 2. **Create a New Feature Branch**:
     ```bash
-    git checkout -b feature/YourFeature
+    git checkout -b main
     ```
 3. **Commit Your Changes**:
     ```bash
-    git commit -m 'Add some feature'
+    git commit -m 'Firt Commit on main'
     ```
 4. **Push to the Branch**:
     ```bash
-    git push origin feature/YourFeature
+    git push origin main
     ```
 5. **Open a Pull Request**.
 
