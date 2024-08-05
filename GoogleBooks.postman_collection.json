@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "6533b16e-a54f-47ef-a047-e3c949921cb6",
+		"name": "GoogleBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24835937"
+	},
+	"item": [
+		{
+			"name": "Fetch-BookData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODA2Njc3LCJpYXQiOjE3MjI4MDQ2MjYsImp0aSI6IjRkODRjNGIxMzZiNzQ5MmVhYjYyMmE1MjEwZGMxMmI4IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ0ZXN0dXNlciJ9.WnkZEV4-nHleKBQu4xCsjFKHJBjpDxYCMV1enOYcMbE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/fetch-books/?query=0.0&search_type=rating&max_results=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fetch-books",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "0.0"
+						},
+						{
+							"key": "search_type",
+							"value": "rating"
+						},
+						{
+							"key": "max_results",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SubmitRecommandationBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODU1MTY0LCJpYXQiOjE3MjI4MDcxMzUsImp0aSI6IjkzOWQ1YTlmNjRiZDRhN2I4ZTBlZjVlNjBiZTViZTllIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ0ZXN0dXNlciJ9.OX9UYFAes-iit2S296rLsIt5tHPoyJfz4M5ftn4lnQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Example Book Title\",\r\n    \"author\": \"Author Name\",\r\n    \"description\": \"A brief description of the book.\",\r\n    \"genre\": \"Fiction\",\r\n    \"rating\": 4.5,\r\n    \"publication_date\": \"2022-01-01\",\r\n    \"cover_image\": \"https://example.com/cover_image.jpg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recommendations/submit/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recommendations",
+						"submit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"password\": \"testpassword\",\r\n    \"password2\": \"testpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"password\": \"testpassword\",\r\n    \"password2\": \"testpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshCoupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   { \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMjk3OTkzNSwiaWF0IjoxNzIyODA3MTM1LCJqdGkiOiJmMThjNGFhNmFmNzM0ZmJkYmU3MTkwMjFlOTFkZmVhMyIsInVzZXJfaWQiOjIsInVzZXJuYW1lIjoidGVzdHVzZXIifQ.UA1chyKejwIX0-CFs03fmrt8wKSc3gforVwq2JqKTzM\"\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/refresh/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000 /recommendations/?genre=Thriller",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000 ",
+					"path": [
+						"recommendations",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Thriller"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort by Rating (Descending)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000 /recommendations/?sort_by=-rating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000 ",
+					"path": [
+						"recommendations",
+						""
+					],
+					"query": [
+						{
+							"key": "sort_by",
+							"value": "-rating"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Genre and Sort by Publication Date (Ascending)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000 /recommendations/?genre=Fiction&sort_by=publication_date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000 ",
+					"path": [
+						"recommendations",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Fiction"
+						},
+						{
+							"key": "sort_by",
+							"value": "publication_date"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Genre, Minimum Rating, and Sort by Rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000 /recommendations/?genre=Fiction&min_rating=4.0&sort_by=rating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000 ",
+					"path": [
+						"recommendations",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Fiction"
+						},
+						{
+							"key": "min_rating",
+							"value": "4.0"
+						},
+						{
+							"key": "sort_by",
+							"value": "rating"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadBooks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Sample Book",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "A  great book about something interesting.",
+							"type": "text"
+						},
+						{
+							"key": "cover_image",
+							"value": "http://example.com/image.jpg",
+							"type": "text"
+						},
+						{
+							"key": "ratings",
+							"value": "4.5",
+							"type": "text"
+						},
+						{
+							"key": "pdf_file",
+							"type": "file",
+							"src": "/C:/Users/Acer/Downloads/Mele A. Django 5 By Example.Build powerful and reliable Python web apps 5ed 2024.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/books/submit/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"submit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CommentOnBooks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Sample Book",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "A  great book about something interesting.",
+							"type": "text"
+						},
+						{
+							"key": "cover_image",
+							"value": "http://example.com/image.jpg",
+							"type": "text"
+						},
+						{
+							"key": "ratings",
+							"value": "4.5",
+							"type": "text"
+						},
+						{
+							"key": "pdf_file",
+							"type": "file",
+							"src": "/C:/Users/Acer/Downloads/Mele A. Django 5 By Example.Build powerful and reliable Python web apps 5ed 2024.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/books/submit/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"submit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LikesOnBooks Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Sample Book",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "A  great book about something interesting.",
+							"type": "text"
+						},
+						{
+							"key": "cover_image",
+							"value": "http://example.com/image.jpg",
+							"type": "text"
+						},
+						{
+							"key": "ratings",
+							"value": "4.5",
+							"type": "text"
+						},
+						{
+							"key": "pdf_file",
+							"type": "file",
+							"src": "/C:/Users/Acer/Downloads/Mele A. Django 5 By Example.Build powerful and reliable Python web apps 5ed 2024.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/Likes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Likes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReviewsOnBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Sample Book",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "A  great book about something interesting.",
+							"type": "text"
+						},
+						{
+							"key": "cover_image",
+							"value": "http://example.com/image.jpg",
+							"type": "text"
+						},
+						{
+							"key": "ratings",
+							"value": "4.5",
+							"type": "text"
+						},
+						{
+							"key": "pdf_file",
+							"type": "file",
+							"src": "/C:/Users/Acer/Downloads/Mele A. Django 5 By Example.Build powerful and reliable Python web apps 5ed 2024.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/Likes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Likes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListReview",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODgzMTI2LCJpYXQiOjE3MjI4MjQ1MTksImp0aSI6ImMyM2MxYmEyMmEwODRkMzA5YmYxM2E1YjMxNGVlNDAyIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ0ZXN0dXNlciJ9.SqUjiNmFG73PdQfEQU6yDO9Jr6RDTSFG13ZAKHvgQQQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Sample Book",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "A  great book about something interesting.",
+							"type": "text"
+						},
+						{
+							"key": "cover_image",
+							"value": "http://example.com/image.jpg",
+							"type": "text"
+						},
+						{
+							"key": "ratings",
+							"value": "4.5",
+							"type": "text"
+						},
+						{
+							"key": "pdf_file",
+							"type": "file",
+							"src": "/C:/Users/Acer/Downloads/Mele A. Django 5 By Example.Build powerful and reliable Python web apps 5ed 2024.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews/95/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"95",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
