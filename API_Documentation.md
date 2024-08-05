@@ -43,7 +43,7 @@ The base URL for all endpoints is `http://localhost:8000/`.
     "total_pages": 2
 }
 
-### 2. Submit Book Recommendation
+2. Submit Book Recommendation
 
 **Endpoint:**
 `POST /recommendations/submit/`
