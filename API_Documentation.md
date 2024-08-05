@@ -26,15 +26,14 @@
     "total_pages": 2
 }
 
-2. Submit Book Recommendation
-Endpoint:
+### 2. Submit Book Recommendation
+```Endpoint:
 
 POST /recommendations/submit/
 
 Request Body:
 
 json
-Copy code
 {
     "title": "Example Book Title",
     "author": "Author Name",
