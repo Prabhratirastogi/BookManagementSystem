@@ -27,13 +27,14 @@
 }
 
 ### 2. Submit Book Recommendation
-```Endpoint:
 
-POST /recommendations/submit/
+**Endpoint:**
 
-Request Body:
+`POST /recommendations/submit/`
 
-json
+**Request Body:**
+
+```json
 {
     "title": "Example Book Title",
     "author": "Author Name",
@@ -43,9 +44,7 @@ json
     "publication_date": "2022-01-01",
     "cover_image": "https://example.com/cover_image.jpg"
 }
-Response:
 
-Returns the details of the submitted recommendation.
 
 3. User Registration
 Endpoint:
